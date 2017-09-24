@@ -1,3 +1,4 @@
+// Effectily the type object
 var Plant = function(height, color) {
     this.height = height;
     this.color = color;
@@ -19,7 +20,7 @@ var Flower = function(plant) {
         
     }
 };
-
+// tree contains plant as member class
 var Tree = function(plant) {
     this.plant = plant;
     this.leaves = true;

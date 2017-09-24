@@ -3,7 +3,8 @@ class AudioService {
     // would be virtual
   playSound(soundID) { return null; };
 };
-
+// HD implementation of Audio
+// plays more HD sound
 class AudioHD {
   constructor() {
       this.sounds = ['../Project/game_sound.wav'];
@@ -16,6 +17,7 @@ class AudioHD {
   }
 };
 Object.setPrototypeOf(AudioHD.prototype, AudioService);
+// standard def audio implementation, plays lower quality audio
 class AudioSD {
   constructor() {
       this.sounds = ['../Project/game_sound_lo-fi.wav'];
@@ -28,6 +30,7 @@ class AudioSD {
   }
 };
 Object.setPrototypeOf(AudioSD.prototype, AudioService);
+// Audio implementation for no audio at all (prevents empty/null object reference)
 class AudioNull {
   constructor() {
       
@@ -38,5 +41,4 @@ class AudioNull {
     
   }
 };
-
 Object.setPrototypeOf(AudioNull.prototype, AudioService);

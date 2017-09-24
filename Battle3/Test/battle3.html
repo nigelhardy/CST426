@@ -39,13 +39,15 @@
             var b = new Plant(10, "Brown");
             var tree = new Tree(b);
             
-            
+            // show plant height from type object
             function getPlantHeight(plant) {
                 document.getElementById("info").innerHTML = "Height: " + plant.getHeight() + " meters";
             }
+            // make flower bloom (demonstrating different function of parent class with type object)
             function bloom(flower) {
                 document.getElementById("info").innerHTML = "Flower: " + flower.bloom();
             }
+            // make tree lose its leaves (demonstrating different function of parent class with type object)
             function loseLeaves(tree) {
                 document.getElementById("info").innerHTML = "Tree: " + tree.loseLeaves();
             }

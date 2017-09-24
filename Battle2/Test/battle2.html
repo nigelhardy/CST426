@@ -16,15 +16,20 @@
         <script>
 
             function add_plant() {
+                // Add plant to update
                 console.log("Adding plant.");
                 element = document.getElementById("main");
                 sub_plant(element);
             }
             function sub_plant(element) {
+                // create plant in HTML
                 element.innerHTML += "<p id='" + plants.length.toString() + "'>Plant #" + plants.length.toString() + ". Size = 1</p>";
                 var p = new plant(plants.length);
 
                 // subscribe plant
+                // should be subscribing, but doesn't work properly with class
+                // should be something like $.Topic( "update" ).subscribe( p.grow );
+                // doesn't properly reference member variables of class :(
                 plants.push(p);
             }
             

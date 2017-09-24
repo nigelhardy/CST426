@@ -1,3 +1,4 @@
+// base class
 class Soldier {
     constructor() {
         
@@ -7,6 +8,8 @@ class Soldier {
         this.soldierName = "SoldierAbstract";
     }
     show(element) {
+      // code to show on page in HTML
+      // not very elegant, but functional
       var frag = document.createDocumentFragment();
       var span = document.createElement("span");
       span.innerHTML = "<p>" + this.soldierName + "</p>";
@@ -16,6 +19,7 @@ class Soldier {
       element.appendChild(frag);
   }
 }
+// inherits from Soldier class
 class BazookaSolider {
   constructor() {
       this.prototype.soldierName = "BazookaSoldier";
@@ -27,9 +31,8 @@ class BazookaSolider {
     
   }
 };
-
 Object.setPrototypeOf(BazookaSolider.prototype, Soldier);
-
+// inherits from Soldier class
 class SwordSolider {
   constructor() {
       this.prototype.soldierName = "SwordSoldier";
@@ -43,7 +46,7 @@ class SwordSolider {
 };
 
 Object.setPrototypeOf(SwordSolider.prototype, Soldier);
-
+// spawner for soldiers
 class Spawner
 {
   constructor(pt) {

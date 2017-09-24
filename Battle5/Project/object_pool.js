@@ -1,7 +1,8 @@
-class OBJ {
+// rock class is object that fills up object pool
+class Rock {
     constructor() {
         this.activated = false;
-        console.log("Created Object.");
+        console.log("Created rock.");
     }
     activate() {
         this.activated = true;
@@ -9,22 +10,16 @@ class OBJ {
     deactivate() {
         this.activated = false;
     }
-}
-
-class Rock {
-    constructor() {
-        this.activated = false;
-        console.log("Created rock.");
+    play() {
+        // do nothing, it is a rock
     }
-    
 }
-Object.setPrototypeOf(Rock.prototype, OBJ);
-
 class ObjectPool {
     constructor(quantity) {
+        // should be array, but using list of objects
         this.objs = [];
-        this.offset = 0;
         this.initialized = false;
+        // maximum amount of objects in object pool
         this.maxQuantity = quantity;
     }
     initialize() {
@@ -33,28 +28,31 @@ class ObjectPool {
         }
         
         for(var j = 0; j < this.maxQuantity; j++) {
+            // create all rocks and add them to array (list)
             this.objs.push(new Rock());
         }
         this.initialized = true;
     }
-   activateObject(type) {
-        if(this.offset >= this.maxQuantity) {
-            alert("Max objects.");
-            return;
+    activateObject() {
+        // go to next available object
+        // activate it
+        for(var i = 0; i < this.maxQuantity; i++) {
+            if(!this.objs[i].activated) {
+                element = document.getElementById((i).toString());
+                element.innerHTML = "Rock #" + i + ". Activated";
+                this.objs[i].activate();
+                break;
+            }
         }
-        //console.log((this.offset).toString());
-        element = document.getElementById((this.offset).toString());
-        element.innerHTML = "Rock #" + this.offset + ". Activated";
-        this.offset++;
+        
     }
-    deactivateObject() {
-        if(this.offset <= 0) {
-            alert("Min objects.");
-            return;
+    deactivateObject(num) {
+        // deactivate selected rock (clicked button on Test)
+        if(num < this.maxQuantity) {
+            this.objs[num].deactivate();
+            element = document.getElementById(num.toString());
+            element.innerHTML = "Rock #" + (num) + ". Deactivated";
         }
-        element = document.getElementById((this.offset-1).toString());
-        element.innerHTML = "Rock #" + (this.offset-1) + ". Deactivated";
-        this.offset--;
     }
     
 }

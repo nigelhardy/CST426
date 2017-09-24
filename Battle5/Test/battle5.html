@@ -16,21 +16,13 @@
         <a href="/">Back to All</a>
         <br>
         <table>
-            <tr><td><p>Activate</p></td></tr>
+            <tr><td><p>Activate Next Available Rock</p></td></tr>
             <tr>
                 <td><button onclick="createRock();">+ Rock</button></td>
             </tr>
 
-            <tr><td><p>Deactivate</p></td></tr>
-            <tr>
-                <td><button onclick="killRock();">- Rock</button></td>
-            </tr>
-
         </table>
-        
-        
         <br>
-        
         
         <p id="info"></p>
         <div id="main"></div>
@@ -42,7 +34,7 @@
             
             console.log(objPool);
             for(var i = 0; i < numObjects; i++) {
-                element.innerHTML += "<p id='" + i + "'>Rock #" + i + ". Deactivated</p>";
+                element.innerHTML += "<p id='" + i + "'>Rock #" + i + ". Deactivated</p><button onclick='deactObj(" + i + ");'>Deactivate #" + i + "</button>";
             }
             function createRock() {
                 objPool.activateObject();
@@ -50,6 +42,9 @@
             
             function killRock() {
                 objPool.deactivateObject();
+            }
+            function deactObj(rockID) {
+                objPool.deactivateObject(rockID);
             }
             
         </script>
