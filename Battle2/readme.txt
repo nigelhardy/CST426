@@ -1,0 +1,1 @@
+Click the button to add a plant. It will subscribe and start growing based on updates

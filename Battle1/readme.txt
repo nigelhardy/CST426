@@ -1,0 +1,1 @@
+Click on the buttons, Bazooka and Sword soldier to create them

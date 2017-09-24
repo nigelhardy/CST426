@@ -1,0 +1,1 @@
+Click on the buttons to see info on objects and call methods. They use type objects to store info.
