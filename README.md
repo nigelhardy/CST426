@@ -1,7 +1,7 @@
 # Assignment 1
 
 Five different game design patterns are implemented in Javascript.
-I tried to make use of the newer Javascript class functionality, so it doesn't stricly follow some conventions that would be simpler in C++ or Java.
+There is no simple explicit way to declare abstract/virtual, but the convention is followed.
 
 1) Open the index.html file
 
