@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script src="../Project/update_method.js"></script>
+        
+    </head>
+    <body>
+        <h1>Battle 2 (update method)</h1>
+        <a href="/">Back to All</a>
+        <br>
+        <button onclick="add_plant()">Add Plant</button>
+        <div id="main"></div>
+        <script>
+
+            function add_plant() {
+                console.log("Adding plant.");
+                element = document.getElementById("main");
+                sub_plant(element);
+            }
+            function sub_plant(element) {
+                element.innerHTML += "<p id='" + plants.length.toString() + "'>Plant #" + plants.length.toString() + ". Size = 1</p>";
+                var p = new plant(plants.length);
+
+                // subscribe plant
+                plants.push(p);
+            }
+            
+        </script>
+    </body>
+    
+</html>

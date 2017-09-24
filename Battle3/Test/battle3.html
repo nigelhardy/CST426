@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script src="../Project/type_object.js"></script>
+        <style>
+            button {
+                width:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Battle 3 (type object)</h1>
+        <a href="/">Back to All</a>
+        <br>
+        <table>
+            <tr>
+                <td><button onclick="getPlantHeight(flower)">Get Flower Height</button></td>
+                <td><button onclick="getPlantHeight(tree)">Get Tree Height</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="bloom(flower)">Bloom</button></td>
+                <td><button onclick="loseLeaves(tree)">Lose Leaves</button></td>
+            </tr>
+        </table>
+        
+        
+        <br>
+        
+        
+        <p id="info"></p>
+        <div id="main"></div>
+        <script>
+            var b = new Plant(.3, "Green");
+            var flower = new Flower(b);
+            
+            var b = new Plant(10, "Brown");
+            var tree = new Tree(b);
+            
+            
+            function getPlantHeight(plant) {
+                document.getElementById("info").innerHTML = "Height: " + plant.getHeight() + " meters";
+            }
+            function bloom(flower) {
+                document.getElementById("info").innerHTML = "Flower: " + flower.bloom();
+            }
+            function loseLeaves(tree) {
+                document.getElementById("info").innerHTML = "Tree: " + tree.loseLeaves();
+            }
+
+            
+        </script>
+    </body>
+    
+</html>

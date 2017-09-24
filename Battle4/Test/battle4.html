@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script src="../Project/service_locator.js"></script>
+        <style>
+            button {
+                width:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Battle 4 (service locator)</h1>
+        <a href="/">Back to All</a>
+        <br>
+        <table>
+            <tr>
+                <td><button onclick="playSound(0)">Play Sound</button></td>
+                <td><button onclick="initAudioHD()">Initialize AudioHD</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="initAudioSD()">Initialize AudioSD</button></td>
+                <td><button onclick="uninitAudio()">Unitialize Audio</button></td>
+            </tr>
+        </table>
+        
+        
+        <br>
+        
+        
+        <p id="info"></p>
+        <div id="main"></div>
+        <script>
+            var audio = new AudioNull();
+            function playSound(soundID) {
+                audio.playSound(soundID);
+            }
+            function initAudioHD() {
+                audio = new AudioHD();
+            }
+            function initAudioSD() {
+                audio = new AudioSD();
+            }
+            function uninitAudio() {
+                audio = new AudioNull();
+            }
+
+            
+        </script>
+    </body>
+    
+</html>

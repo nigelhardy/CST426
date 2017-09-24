@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous"></script>
+        <script src="../Project/object_pool.js"></script>
+        <style>
+            button {
+                width:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Battle 5 (object pool)</h1>
+        <a href="/">Back to All</a>
+        <br>
+        <table>
+            <tr><td><p>Activate</p></td></tr>
+            <tr>
+                <td><button onclick="createRock();">+ Rock</button></td>
+            </tr>
+
+            <tr><td><p>Deactivate</p></td></tr>
+            <tr>
+                <td><button onclick="killRock();">- Rock</button></td>
+            </tr>
+
+        </table>
+        
+        
+        <br>
+        
+        
+        <p id="info"></p>
+        <div id="main"></div>
+        <script>
+            var numObjects = 10;
+            var objPool = new ObjectPool(numObjects);
+            objPool.initialize();
+            element = document.getElementById("main");
+            
+            console.log(objPool);
+            for(var i = 0; i < numObjects; i++) {
+                element.innerHTML += "<p id='" + i + "'>Rock #" + i + ". Deactivated</p>";
+            }
+            function createRock() {
+                objPool.activateObject();
+            }
+            
+            function killRock() {
+                objPool.deactivateObject();
+            }
+            
+        </script>
+    </body>
+    
+</html>

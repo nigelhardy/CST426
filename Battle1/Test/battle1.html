@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="../Project/prototype.js"></script>
+        <script>
+            var bs;
+            var bs = new BazookaSolider();
+            var bazookaSpawner = new Spawner(bs);
+            var ss = new SwordSolider();
+            var swordSpawner = new Spawner(ss);
+            
+            function spawnBazooka() {
+                var newSwordSoldier = bazookaSpawner.spawnSoldier();
+                element = document.getElementById("main");
+                newSwordSoldier.prototype.show(element);
+            }
+            function spawnSword() {
+                var newSwordSoldier = swordSpawner.spawnSoldier();
+                element = document.getElementById("main");
+                newSwordSoldier.prototype.show(element);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Battle 1 (prototype)</h1>
+        <a href="/">Back to All</a>
+        <br>
+        <button onclick="spawnBazooka()">Bazooka</button>
+        <button onclick="spawnSword()">Sword</button>
+        <div id="main"></div>
+        <script>
+            
+        </script>
+    </body>
+    
+</html>
